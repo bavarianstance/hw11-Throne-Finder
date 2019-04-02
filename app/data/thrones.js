@@ -63,6 +63,7 @@ let thrones = [
 	"1",
 	"4",
 	"1"
+	]
 },
 
 {
@@ -85,7 +86,7 @@ let thrones = [
 	"1",
 	"2"
 	]
-}.
+},
 
 {
 	"name": "Daenerys Targaryen",

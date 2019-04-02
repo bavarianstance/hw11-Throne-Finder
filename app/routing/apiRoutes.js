@@ -3,7 +3,7 @@ let thronesData = require("../data/thrones");
 module.exports = (app) => {
 
 	app.get("/api/thronesData", (request, response) => {
-		res.json(thronesData);
+		response.json(thronesData);
 	});
 
 
@@ -41,7 +41,7 @@ for (let i = 0; i < thronesData.length; i++){
 }
 
 thronesData.push(playerData);
-res.json(topMatch);
+response.json(topMatch);
 
 	});
 }

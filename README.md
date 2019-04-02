@@ -25,9 +25,11 @@
 ![match](./imgs/match.png "Match Modal")
 
 * Console Log for Data Object Array
+
 ![console-log](./imgs/consolelog.png "Console Log")
 
 * API Data
+
 ![api-data](./imgs/apidata.png "API Data")
 
 ### Technologies Used

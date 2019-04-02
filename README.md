@@ -3,7 +3,8 @@
 ![GoT](./imgs/got.jpeg "GoT")
 
 ## Link to Live Deployed Page on Heroku
-
+[Heroku Deployed App](https://throne-finder-app.herokuapp.com
+)
 ## Installation 
 * npm-install for initial download of dependent packages
 * node server.js to init server

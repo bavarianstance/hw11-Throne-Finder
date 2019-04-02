@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 // def ports
 let PORT = process.envPORT || 3000;
-const HOST = "0.0.0.0"
+const HOST = "0.0.0.0";
 // init express data parsing handling
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

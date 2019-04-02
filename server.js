@@ -8,8 +8,8 @@ const HOST = "0.0.0.0";
 // init express data parsing handling
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
-app.use(express.static(path.join(__dirname, '/app/public/')));
+// app.use(express.static('public'));
+// app.use(express.static(path.join(__dirname, '/app/public/')));
 
 // def routing for app
 require("./app/routing/apiRoutes")(app);

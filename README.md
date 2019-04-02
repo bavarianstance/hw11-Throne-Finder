@@ -8,7 +8,7 @@
 ## Installation 
 * npm-install for initial download of dependent packages
 * node server.js to init server
-* navigate to localhost:8080 in web browser to init app
+* navigate to localhost:3000 in web browser to init app
 
 ### Usage
 * node bamazonManager.js --> run Manager Control Panel application

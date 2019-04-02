@@ -301,20 +301,15 @@
 				points: results
 			};
 			console.log(newUser);
-			$ajax({
-				type: "POST",
-				data: newUser,
-				url: "/api/thronesData",
-				success: (response) => {
+			$.post("/api/thronesData", newUser, function(response){
 					console.log(response);
-					alert("New user successfully added.")
+					alert("New user successfully added.");
 					$("#match-name").text(response.name);
 					$("#match-img").attr("src", response.pic);
 					$("#modal-results").toggle();	
-				}
-			});
+				});
 		} else {
-			alert("Error. Illegal form input validation.")
+			alert("Error. Illegal form input validation.");
 		}
 	});
 </script>

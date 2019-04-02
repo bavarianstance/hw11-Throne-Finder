@@ -155,6 +155,170 @@
 	<option value="3">Depends on the underdog.</option>
 	<option value="4">No, I only support winners.</option>
 </select>
+
+<h4>
+	<strong>Family</strong>
+</h4>
+<h5>Do you care if your family approves of who you date?</h5>
+<select class="chosen-select" id="question11">
+	<option value=""></option>
+	<option value="1">Of course. My family knows me best.</option>
+	<option value="2">My family couldn't care less.</option>
+	<option value="3">Nope. It's my life.</option>
+	<option value="4">It's sorta complicated. You don't wanna know.</option>
+</select>
+
+<h4>
+	<strong>Success</strong>
+</h4>
+<h5>What does success mean to you?</h5>
+<select class="chosen-select" id="question12">
+	<option value=""></option>
+	<option value="1">Landing my dream job.</option>
+	<option value="2">Taking care of my family.</option>
+	<option value="3">Living a life of adventure.</option>
+	<option value="4">Doing well financially.</option>
+</select>
+
+<h4>
+	<strong>Pets</strong>
+</h4>
+<h5>How do you feel about pets?</h5>
+<select class="chosen-select" id="question13">
+	<option value=""></option>
+	<option value="1">I think pets are fine, especially when they're useful.</option>
+	<option value="2">My pets are like my children.</option>
+	<option value="3">I'm more comfortable around my pet than I am around most people.</option>
+	<option value="4">Pets are the worst.</option>
+</select>
+
+<h4>
+	<strong>The Throne</strong>
+</h4>
+<h5>How important would the Iron Throne be to you if you lived in Westeros?</h5>
+<select class="chosen-select" id="question14">
+	<option value=""></option>
+	<option value="1">My only priority would be getting my butt on that throne.</option>
+	<option value="2">I wouldn't be too concerned about it.</option>
+	<option value="3">I would care who sat in the Iron Throne, but I wouldn't want it to be me.</option>
+	<option value="4">I'd prefer to rule over my domain from a chair that didn't draw blood.</option>
+	<option value="5">What's an Iron Throne?</option>
+</select>
+
+<h4>
+	<strong>Who Are You?</strong>
+</h4>
+<h5>Do you lead or follow?</h5>
+<select class="chosen-select" id="question15">
+	<option value=""></option>
+	<option value="1">I'm a leader.</option>
+	<option value="2">I'm a follower.</option>
+	<option value="3">I Rule with an Iron Fist.</option>
+</select>
+
+<br>
+<h3>Discover your fate.</h3>
+<br>
+<br>
+
+<button type="submit" class="btn btn-warning btn-lg btn-block" id="submit">
+	<i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+	Submit!
+</button>
+<hr>
+<footer class="footer">
+		<div class="container">
+			<p>
+				<a href="/api/thronesData" target="_blank">API GoT Data</a> ||
+				<a href="https://github.com/bavarianstance/hw11-Throne-Finder" target="_blank">Link to Github Repo</a>
+			</p>
+		</div>
+	</footer>
+</div> 
+
+<!-- Modal Popup -->
+<div id="modal-results" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">X</button>
+				<h2 class="modal-title">
+					<strong>Your GoT Match</strong>
+				</h2>
+			</div>
+			<div class="modal-body">
+				<h2 id="match-name"></h2>
+				<img id="match-img">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
+			</div>
+		</div>
+	</div>
 </div>
+
+<!-- Client Side JS -->
+<script type="text/javascript">
+	$("#submit").on("click", (event)=> {
+		event.preventDefault();
+
+		let validation = () => {
+			let boolean = true;
+			$(".form-control").each(
+				() => {
+					if($this.val() === "" || $(this).val() === null){
+						boolean = false;
+					} 
+				});
+			$(".chosen-select").each(
+				() => {
+					if($(this).val() === "" || $(this).val() === null){
+						boolean = false;
+					}
+				});
+			return boolean;
+		}
+		if (validation()){
+			let results = [
+			$("#question1").val().trim(),
+			$("#question2").val().trim(),
+			$("#question3").val().trim(),
+			$("#question4").val().trim(),
+			$("#question5").val().trim(),
+			$("#question6").val().trim(),
+			$("#question7").val().trim(),
+			$("#question8").val().trim(),
+			$("#question9").val().trim(),
+			$("#question10").val().trim(),
+			$("#question11").val().trim(),
+			$("#question12").val().trim(),
+			$("#question13").val().trim(),
+			$("#question14").val().trim(),
+			$("#question15").val().trim()
+			];
+			let newUser = {
+				name: $("#name").val(),
+				pic: $("#pic").val(),
+				points: results
+			};
+			console.log(newUser);
+			$ajax({
+				type: "POST",
+				data: newUser,
+				url: "/api/thronesData",
+				success: (response) => {
+					console.log(response);
+					alert("New user successfully added.")
+					$("#match-name").text(response.name);
+					$("#match-img").attr("src", response.pic);
+					$("#modal-results").toggle();	
+				}
+			});
+		} else {
+			alert("Error. Illegal form input validation.")
+		}
+	});
+</script>
 </body>
 </html>

@@ -3,7 +3,7 @@ let thrones = [
 {
 	"name": "Ned Stark",
 	"pic": "https://www.hbo.com/content/dam/hbodata/series/game-of-thrones/character/s5/eddard-ned-stark-512x512.jpg/_jcr_content/renditions/cq5dam.web.260.260.jpeg",
-	"scores": [
+	"points": [
 	"4",
 	"4",
 	"3",
@@ -25,7 +25,7 @@ let thrones = [
 {
 	"name": "Tyrion Lannister",
 	"pic": "https://www.hbo.com/content/dam/hbodata/series/game-of-thrones/character/s5/tyrion-lannister-512x512.jpg/_jcr_content/renditions/cq5dam.web.260.260.jpeg",
-	"scores": [
+	"points": [
 	"2",
 	"1",
 	"2",
@@ -47,7 +47,7 @@ let thrones = [
 {
 	"name": "Cersei Lannister",
 	"pic": "https://www.hbo.com/content/dam/hbodata/series/game-of-thrones/character/s5/cersei-lannister-512x512.jpg/_jcr_content/renditions/cq5dam.web.260.260.jpeg",
-	"scores": [
+	"points": [
 	"2",
 	"1",
 	"3",
@@ -68,7 +68,7 @@ let thrones = [
 {
 	"name": "Jaime Lannister",
 	"pic": "https://www.hbo.com/content/dam/hbodata/series/game-of-thrones/character/s5/jamie-lannister-512x512.jpg/_jcr_content/renditions/cq5dam.web.260.260.jpeg",
-	"scores": [
+	"points": [
 	"3",
 	"3",
 	"1",
@@ -90,7 +90,7 @@ let thrones = [
 {
 	"name": "Daenerys Targaryen",
 	"pic": "https://www.hbo.com/content/dam/hbodata/series/game-of-thrones/character/s5/daenarys-512x512.jpg/_jcr_content/renditions/cq5dam.web.260.260.jpeg",
-	"scores": [
+	"points": [
 	"1",
 	"3",
 	"2",
@@ -111,7 +111,7 @@ let thrones = [
 {
 	"name": "Jon Snow",
 	"pic": "https://www.hbo.com/content/dam/hbodata/series/game-of-thrones/character/s5/john-snow-512x512.jpg/_jcr_content/renditions/cq5dam.web.260.260.jpeg",
-	"scores": [
+	"points": [
 	"1",
 	"2",
 	"3",
@@ -132,7 +132,7 @@ let thrones = [
 {
 	"name": "Sansa Stark",
 	"pic": "https://www.hbo.com/content/dam/hbodata/series/game-of-thrones/character/s5/sansa-stark-512x512.jpg/_jcr_content/renditions/cq5dam.web.260.260.jpeg",
-	"scores": [
+	"points": [
 	"3",
 	"2",
 	"1",
@@ -153,7 +153,7 @@ let thrones = [
 {
 	"name": "Joffrey Baratheon",
 	"pic": "https://www.hbo.com/content/dam/hbodata/series/game-of-thrones/character/joffrey-baratheon-512.jpg/_jcr_content/renditions/cq5dam.web.260.260.jpeg",
-	"scores": [
+	"points": [
 	"1",
 	"2",
 	"1",
@@ -174,7 +174,7 @@ let thrones = [
 {
 	"name": "Petyr Baelish",
 	"pic": "https://www.hbo.com/content/dam/hbodata/series/game-of-thrones/character/s5/petyr-baelish-512x512.jpg/_jcr_content/renditions/cq5dam.web.260.260.jpeg",
-	"scores": [
+	"points": [
 	"2",
 	"3",
 	"1",
@@ -196,7 +196,7 @@ let thrones = [
 {
 	"name": "Khol Drogo",
 	"pic": "https://www.hbo.com/content/dam/hbodata/series/game-of-thrones/character/s5/khal-drogo-512x512.jpg/_jcr_content/renditions/cq5dam.web.260.260.jpeg",
-	"scores": [
+	"points": [
 	"2",
 	"1",
 	"2",

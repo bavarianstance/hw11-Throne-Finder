@@ -2,7 +2,7 @@ let thronesData = require("../data/thrones");
 
 module.exports = (app) => {
 
-	app.get("/api/thrones", (request, response) => {
+	app.get("/api/thronesData", (request, response) => {
 		res.json(thronesData);
 	});
 

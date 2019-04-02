@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Throne Finder</title>
+	<!-- Bootstrap CDN -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- jQuery CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<!-- Chosen CDN for Survey -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+	<h2>Who will you share the Iron Throne with?</h2>
+	<hr>
+
+	<h3>
+		<strong>Enter Your Details</strong>
+	</h3>
+	<h4>Name</h4>
+	<input type="text" id= "name" class= "form-control" required>
+
+	<h4>Your Picture Link</h4>
+	<input type="text" id= "pic" class="form-control" required>
+	<hr>
+
+<h4>
+	<strong>Death</strong>
+</h4>
+<h5>Like everyone else, you are but a mere mortal. How would you like to leave this world?</h5>
+<select class="chosen-select" id="question1">
+	<option value=""></option>
+	<option value="1">Old and surrounded by my loved ones.</option>
+	<option value="2">Doing something exciting and dangerous like skydiving or running with the bulls.</option>
+	<option value="3">While I'm sleeping, I'll never know what hit me.</option>
+	<option value="4">I'm too awesome to die! (Plus, won't science - or magic - come up with something by then??)</option>
+</select>
+
+<h4>
+	<strong>Secrets</strong>
+</h4>
+<h5>Do you have any secrets?</h5>
+<select class="chosen-select" id="question2">
+	<option value=""></option>
+	<option value="1">Nope, what you see is what you get with me.</option>
+	<option value="2">Not really. Besides the really big one I'll take to my grave.</option>
+	<option value="3">Yeah, just a handful. But who doesn't?</option>
+	<option value="4">I can barely keep track of all the secrets I have! About me, other people, demons, aliens, etc.</option>
+</select>
+
+<h4>
+	<strong>Pen x Sword</strong>
+</h4>
+<h5>Is the pen really mightier than the sword?</h5>
+<select class="chosen-select" id="question3">
+	<option value=""></option>
+	<option value="1">Yes, absolutely.</option>
+	<option value="2">Sometimes. It depends on the situation.</option>
+	<option value="3">Dude. Swords are way better for stabbing than pens. </option>
+</select>
+
+<h4>
+	<strong>Flirting</strong>
+</h4>
+<h5>What is your flirting style?</h5>
+<select class="chosen-select" id="question4">
+	<option value=""></option>
+	<option value="1">Loose and carefree. If it breathes, I flirt with it.</option>
+	<option value="2">Aggressive. I see what I like, and I go for it.</option>
+	<option value="3">I like playing hard to get.</option>
+	<option value="4">Flirting does not interest me - nor does this question.</option>
+	<option value="5">I don't really have a style.</option>
+</select>
+
+<h4>
+	<strong>Friends</strong>
+</h4>
+<h5>Your friends would describe you as...</h5>
+<select class="chosen-select" id="question5">
+	<option value=""></option>
+	<option value="1">Stubborn</option>
+	<option value="2">Fiery</option>
+	<option value="3">Mischievous</option>
+	<option value="4">Sarcastic</option>
+	<option value="5">Intimdating</option>
+	<option value="6">Brooding</option>
+</select>
+
+<h4>
+	<strong>Movies</strong>
+</h4>
+<h5>If you could star in your own movie, what kind of movie would it be?</h5>
+<select class="chosen-select" id="question6">
+	<option value=""></option>
+	<option value="1">A War Story</option>
+	<option value="2">A Family Drama</option>
+	<option value="3">A Thriller</option>
+	<option value="4">Adventure with a dash of Romance</option>
+	<option value="5">A Revenge Tale</option>
+	<option value="6">A Comedy</option>
+</select>
+
+<h4>
+	<strong>Nice or Naughty</strong>
+</h4>
+<h5>Do you consider yourself a nice person?</h5>
+<select class="chosen-select" id="question7">
+	<option value=""></option>
+	<option value="1">No, being nice is overrated. A sign of weakness.</option>
+	<option value="2">Sometimes. I might've done a few nice things last week.</option>
+	<option value="3">I try my best to be nice, but it doesn't always work out.</option>
+	<option value="4">Yes, I'm a nice person.</option>
+</select>
+
+<h4>
+	<strong>Game of Boards</strong>
+</h4>
+<h5>Your friends get you a new board game. What do you do before playing?</h5>
+<select class="chosen-select" id="question8">
+	<option value=""></option>
+	<option value="1">Nothing, I just wing it. That's the best way to learn.</option>
+	<option value="2">I study all the instructions.</option>
+	<option value="3">I just read the "how to" section.</option>
+	<option value="4">I have my friends explain the game to me. They bought it after all.</option>
+</select>
+
+<h4>
+	<strong>Westeros</strong>
+</h4>
+<h5>Imagine you get to take a field trip to Westeros. What's the ONE thing you must bring along?</h5>
+<select class="chosen-select" id="question9">
+	<option value=""></option>
+	<option value="1">A Sword</option>
+	<option value="2">Maps and Books About Westeros</option>
+	<option value="3">Lots of Gold</option>
+	<option value="4">A Horse</option>
+	<option value="5">A Bodyguard</option>
+</select>
+
+<h4>
+	<strong>Underdogs</strong>
+</h4>
+<h5>Are you a fan of underdogs and/or outcasts?</h5>
+<select class="chosen-select" id="question10">
+	<option value=""></option>
+	<option value="1">Yes, I can't help but empathize.</option>
+	<option value="2">I'm a bit of an outcast myself, but I wouldn't say I actively root for people like me.</option>
+	<option value="3">Depends on the underdog.</option>
+	<option value="4">No, I only support winners.</option>
+</select>
+</div>
+</body>
+</html>

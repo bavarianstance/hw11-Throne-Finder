@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 // def ports
 let PORT = process.envPORT || 3000;
-
+const HOST = "0.0.0.0"
 // init express data parsing handling
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -13,6 +13,6 @@ app.use(express.json());
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 // init server
-app.listen(PORT, function() {
+app.listen(PORT, HOST, function() {
   console.log("App listening on PORT: " + PORT);
 });

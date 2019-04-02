@@ -1,3 +1,4 @@
+// define thrones object variable
 let thrones = [
 
 {
@@ -217,5 +218,5 @@ let thrones = [
   }
 
 ];
-
+// exports thrones data as an object
 module.exports = thrones;

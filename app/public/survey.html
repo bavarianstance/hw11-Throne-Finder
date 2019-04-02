@@ -4,12 +4,10 @@
 	<title>Throne Finder</title>
 	<!-- Bootstrap CDN -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
  <!-- jQuery CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
 <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <!-- Chosen CDN for Survey -->
@@ -18,6 +16,7 @@
 </head>
 <body>
 
+<!-- bootstrap main container-->
 <div class="container">
 	<h2>Who will you share the Iron Throne with?</h2>
 	<hr>
@@ -26,17 +25,19 @@
 		<strong>Enter Your Details</strong>
 	</h3>
 	<h4>Name</h4>
+	<!-- required input forms for user data -->
 	<input type="text" id="name" class= "form-control" required>
-
 	<h4>Your Picture Link</h4>
 	<input type="text" id="pic" class="form-control" required>
 	<hr>
 
+<!-- Survey Questions -->
 <h4>
 	<strong>Death</strong>
 </h4>
 <h5>Like everyone else, you are but a mere mortal. How would you like to leave this world?</h5>
-<select class="chosen-select" id="question1">
+<!-- form control leveraging Chosen CDN for dropdown menu formatting
+ --><select class="chosen-select" id="question1">
 	<option value=""></option>
 	<option value="1">Old and surrounded by my loved ones.</option>
 	<option value="2">Doing something exciting and dangerous like skydiving or running with the bulls.</option>
@@ -218,16 +219,18 @@
 </select>
 
 <br>
+<hr>
 <h3>Discover your fate.</h3>
 <br>
 <br>
-
+<!-- Submit form button -->
 <button type="submit" class="btn btn-warning btn-lg btn-block" id="submit">
 	<i class="fas fa-sign-in-alt" aria-hidden="true"></i>
 	Submit!
 </button>
 <hr>
-<footer class="footer">
+<!-- Footer with links to API thronesData object and Github Repo
+ --><footer class="footer">
 		<div class="container">
 			<p>
 				<a href="/api/thronesData" target="_blank">API GoT Data</a> ||
@@ -240,7 +243,6 @@
 <!-- Modal Popup -->
 <div id="modal-results" class="modal fade" role="dialog">
 	<div class="modal-dialog">
-
 		<div class="modal-content">
 			<div class="modal-header">
 				<h2 class="modal-title">
@@ -262,7 +264,7 @@
 <script type="text/javascript">
 	$("#submit").on("click", function(event){
 		event.preventDefault();
-
+		// input form validation function
 		function validation() {
 			let boolean = true;
 			$(".form-control").each(function(){
@@ -277,6 +279,7 @@
 				});
 			return boolean;
 		}
+		// if validated, collect user submitted values
 		if (validation()){
 			let results = [
 			$("#question1").val().trim(),
@@ -295,20 +298,24 @@
 			$("#question14").val().trim(),
 			$("#question15").val().trim()
 			];
+			// defines newUser object and assigns uesr inputted data from form control
 			let newUser = {
 				name: $("#name").val(),
 				pic: $("#pic").val(),
 				points: results
 			};
 			console.log(newUser);
+			// post request to API thronesData
 			$.post("/api/thronesData", newUser, function(response){
 					console.log(response);
-					// alert("New user successfully added.");
+					// selects modal html elements by ID and appends matched data
 					$("#match-name").text(response.name);
 					$("#match-img").attr("src", response.pic);
+					// init modal
 					$("#modal-results").modal("toggle");
 				});
 		} else {
+			// alert for invalid input from form ctrl
 			alert("Error. Illegal form input validation.");
 		}
 	});

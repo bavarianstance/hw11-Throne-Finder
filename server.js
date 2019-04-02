@@ -1,18 +1,18 @@
+// NPM express pkg
 const express = require("express");
-
+// init express and assign to variable 
 const app = express();
-
+// def ports
 let PORT = process.envPORT || 8080;
 
+// init express data parsing handling
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(express.static('imgs'));
-// app.use(express.static('public'));
 
-
+// def routing for app
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
-
+// init server
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });

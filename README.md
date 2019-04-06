@@ -11,8 +11,7 @@
 * navigate to localhost:3000 in web browser to init app
 
 ### Usage
-* node bamazonManager.js --> run Manager Control Panel application
-* node bamazonCustomer.js --> run Customer Item Purchase application
+* node server.js --> run app
 
 ### App Screenshots
 * Home Page

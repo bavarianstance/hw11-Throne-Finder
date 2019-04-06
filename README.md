@@ -5,13 +5,10 @@
 ## Link to Live Deployed Page on Heroku
 [Heroku Deployed App](https://throne-finder-app.herokuapp.com
 )
-## Installation 
+## Installation/Usage
 * npm-install for initial download of dependent packages
 * node server.js to init server
 * navigate to localhost:3000 in web browser to init app
-
-### Usage
-* node server.js --> run app
 
 ### App Screenshots
 * Home Page
